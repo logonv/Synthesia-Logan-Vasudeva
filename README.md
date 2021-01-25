@@ -18,7 +18,7 @@ Following ```-o``` is the name of the directory that the generated videos will b
 
 This Python script will generate the videos and save them as desired. 
 
-##Test cases
+## Test cases
 1) Example given in Tech Challenge 
 ```
 personalise -s “Hey {name}. I just made my first synthetic video, made with the Synthesia API!” -b background.jpg -d data.csv -o videos
@@ -32,7 +32,7 @@ personalise -s "Good afternoon. Today was a very exciting {race}. Here is an int
 First five races were in the ```.csv```. Interestingly and impressively, it worked reasonably well when pronouncing drivers' names etc (though of course, most of those names were Lewis Hamilton 😂). Does not recognise "grand" has to be pronounced in the French way. Background image not really suitable either.   
 
 
-##Notes
+## Notes
 
 * Error handling needs to be improved:
     * It is assumed the user inputs the command as explained above. Error handling needs to be implemented that ensures input is in the correct form etc
