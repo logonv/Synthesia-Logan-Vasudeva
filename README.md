@@ -45,3 +45,4 @@ First five races were in the ```.csv```. Interestingly and impressively, it work
     
 
 
+<sub> Note: Initially a Jupyter notebook was used to debug code hence there is a ```.ipnyb_checkpoints``` folder  </sub>
