@@ -107,9 +107,9 @@ if __name__ == "__main__":
             if request.status_code !=200:
                 raise Api_Request_fail   
             request_status=request.json()['status']
-            print(video_id+' production not complete')
-            print('Waiting {} seconds before trying again.\nWill move onto next video if still not complete (and try again later).'.format(time_delay))
-            time.sleep(time_delay) #so it doesn't hit rate limit 
+            if request_status == 'IN_PROGRESS':
+                print(video_id+' production not complete')
+            
             if request_status == 'COMPLETE':
                 print(video_id+' production complete')
                 download_link=request.json()['download']
@@ -129,7 +129,9 @@ if __name__ == "__main__":
                     with open(save_path, 'wb') as f:
                         f.write(download.content)
                         print('File downloaded and saved')
-                video_id_list.remove(video_id)        
+                video_id_list.remove(video_id)    
+            print('Waiting {} seconds to prevent hitting rate limit.'.format(time_delay)) 
+            time.sleep(time_delay) #so it doesn't hit rate limit     
         video_id_list_copy=video_id_list[:]
         if video_id_list==[]:
             break
